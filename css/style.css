@@ -119,6 +119,10 @@ input[type="text"] {
   line-height: 1.5;
 }
 
+.single-meal .main p {
+  text-align: justify;
+}
+
 .single-meal ul {
   padding-left: 0;
   list-style-type: none;
