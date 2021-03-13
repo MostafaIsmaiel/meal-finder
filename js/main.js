@@ -130,3 +130,7 @@ mealsEl.addEventListener('click', e => {
 });
 
 to_Top.addEventListener('click', toTop);
+
+window.addEventListener('scroll', () => {
+  to_Top.style.opacity = document.documentElement.scrollTop > 300 ? 1 : 0;
+})
