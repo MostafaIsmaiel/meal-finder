@@ -5,6 +5,8 @@ const search = document.getElementById('search'),
   resultHeading = document.getElementById('result-heading'),
   single_MealEl = document.getElementById('single-meals');
 
+let to_Top = document.getElementById('toTop');
+
 // Search meal and fetch from API
 function searchMeal(e) {
   e.preventDefault(); // preventing submimtting
@@ -51,6 +53,8 @@ function getMealById(mealID) {
 
       addMealToDOM(meal);
     })
+
+  document.documentElement.scrollTo(0, single_MealEl.offsetTop);
 }
 
 
@@ -101,6 +105,11 @@ function addMealToDOM(meal) {
   `;
 }
 
+// Scroll to top
+function toTop() {
+  document.documentElement.scrollTo(0, 0);
+};
+
 // Event Listners
 submit.addEventListener('submit', searchMeal);
 random.addEventListener('click', getRandomMeal);
@@ -116,5 +125,8 @@ mealsEl.addEventListener('click', e => {
   if (mealInfo) {
     const mealID = mealInfo.getAttribute('data-mealid');
     getMealById(mealID);
+
   }
 });
+
+to_Top.addEventListener('click', toTop);
